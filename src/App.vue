@@ -2,32 +2,31 @@
     div#app
         div.crypto-content
             div.crypto-bar__navbar
-                div.crypto-bar__route-block  
-                    img(
-                        src="./assets/graph.png"
-                    )
-                div.crypto-bar__route-block 
-                    img(
-                        src="./assets/crypto-info.png"
-                    )
-            div.crypto-content__table
-                cryptoInfo
+                router-link(to="/", active-class)
+                    div.crypto-bar__route-block  
+                        img(
+                            src="./assets/graph.png"
+                        )
+                router-link(to="/converter", active-class)
+                    div.crypto-bar__route-block 
+                        img(
+                            src="./assets/crypto-info.png"
+                        )
+            router-view
+
 
 </template>
 
 <script lang="ts">
 
 import Vue from "vue"
-import CryptoInfo from '@/components/CryptoInfo.vue';
 import { Component,  Ref } from 'vue-property-decorator';
 
 
 
 
 @Component({
-    components: { 
-        cryptoInfo: CryptoInfo
-    }
+
 })
 
 export default class App extends Vue {
@@ -77,6 +76,8 @@ html, body
                     background-color: white
                     cursor: pointer
 
+.router-link-exact-active .crypto-bar__route-block 
+    background-color: white
 
 </style>
 

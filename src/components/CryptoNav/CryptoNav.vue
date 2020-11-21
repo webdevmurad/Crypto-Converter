@@ -1,13 +1,16 @@
 <template lang="pug">
     div.crypto-bar__navbar
-        div.crypto-bar__route-block  
-            img(
-                src="../../assets/graph.png"
-            )
-        div.crypto-bar__route-block 
-            img(
-                src="../../assets/crypto-info.png"
-            )
+        router-link(to="/")
+            div.crypto-bar__route-block  
+                img(
+                    src="../../assets/graph.png"
+                )
+        router-link(to="/converter")
+            div.crypto-bar__route-block 
+                img(
+                    src="../../assets/crypto-info.png"
+                )
+        router-view
 
 </template>
 

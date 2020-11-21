@@ -1,6 +1,5 @@
 <template lang="pug">
-    div.crypto-content__info
-        p КриптоИнфо
+    div.crypto-content__converter
         div.crypto-content__table
             cryptoTable
         div.crypto-content__bar
@@ -49,7 +48,8 @@ html, body
     &-content
         display: flex
         height: 100%
-        &__info 
+        &__converter
+            width: 100%
             height: 100%
             display: flex
         &__bar 
