@@ -1,36 +1,28 @@
 <template lang="pug">
-    div#app
-        div.crypto-content
-            div.crypto-bar__navbar
-                div.crypto-bar__route-block  
-                    img(
-                        src="./assets/graph.png"
-                    )
-                div.crypto-bar__route-block 
-                    img(
-                        src="./assets/crypto-info.png"
-                    )
-            div.crypto-content__table
-                cryptoInfo
-
+    div.crypto-content__info
+        p КриптоИнфо
+        div.crypto-content__table
+            cryptoTable
+        div.crypto-content__bar
+            cryptoBar
 </template>
 
 <script lang="ts">
 
 import Vue from "vue"
-import CryptoInfo from '@/components/CryptoInfo.vue';
+import CryptoBar from '@/components/CryptoBar/CryptoBar.vue';
+import CryptoTable from '@/components/CryptoTable/CryptoTable.vue';
 import { Component,  Ref } from 'vue-property-decorator';
-
-
 
 
 @Component({
     components: { 
-        cryptoInfo: CryptoInfo
+        cryptoTable: CryptoTable,
+        cryptoBar: CryptoBar
     }
 })
 
-export default class App extends Vue {
+export default class CryptoInfo extends Vue {
 }
 </script>
 
@@ -57,6 +49,15 @@ html, body
     &-content
         display: flex
         height: 100%
+        &__info 
+            height: 100%
+            display: flex
+        &__bar 
+            width: 400px
+            background-color: #F79D6C
+            display: flex
+            justify-content: center
+            align-items: center
         &__table
             width: 100%
 
