@@ -1,18 +1,9 @@
 <template lang="pug">
-    div#app
-        div.crypto-content
-            div.crypto-bar__navbar
-                router-link(to="/", active-class)
-                    div.crypto-bar__route-block  
-                        img(
-                            src="./assets/graph.png"
-                        )
-                router-link(to="/converter", active-class)
-                    div.crypto-bar__route-block 
-                        img(
-                            src="./assets/crypto-info.png"
-                        )
-            router-view
+    div
+        div.col-12.col-md-3
+            sideBlock
+        div.col-12.col-md-9
+            contentBlock
 
 
 </template>
@@ -21,12 +12,17 @@
 
 import Vue from "vue"
 import { Component,  Ref } from 'vue-property-decorator';
+import SideBlock from '@/components/SideBlock.vue'
+import ContentBlock from '@/components/ContentBlock.vue'
 
 
 
 
 @Component({
-
+    components: { 
+        sideBlock: SideBlock,
+        contentBlock: ContentBlock
+    }
 })
 
 export default class App extends Vue {
